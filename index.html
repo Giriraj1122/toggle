@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DARK LIGHT</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #222;
+      transition: background 0.3s, color 0.3s;
+    }
+    .c {
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #555;
+    }
+    .d {
+      background: #121212;
+      color: #f0f0f0;
+    }
+    .d button {
+      background: #eee;
+      color: #121212;
+    }
+    .d button:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="c">
+    <h1>DAY 6 of 30 DAYS JS</h1>
+    <button id="x">change</button>
+  </div>
+  <script>
+    const x = document.getElementById("x");
+    const y = document.body;
+    if (localStorage.getItem("z") === "1") y.classList.add("d");
+    x.addEventListener("click", () => {
+      y.classList.toggle("d");
+      localStorage.setItem("z", y.classList.contains("d") ? "1" : "0");
+    });
+  </script>
+</body>
+</html>
